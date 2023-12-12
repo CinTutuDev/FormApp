@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -12,7 +12,7 @@ import {
   templateUrl: './dynamic-page.component.html',
   styles: [],
 })
-export class DynamicPageComponent implements OnInit {
+export class DynamicPageComponent {
   public myFormDinamic: FormGroup = this.fb.group({
     /* Requerido y un minimo de tres letras */
     name: ['', [Validators.required, Validators.minLength(3)]],
@@ -58,8 +58,6 @@ export class DynamicPageComponent implements OnInit {
     return null;
   }
 
-  ngOnInit(): void {}
-
   onAddFavorite(): void {
     if (this.newFavortite.invalid) return;
 
@@ -81,7 +79,9 @@ export class DynamicPageComponent implements OnInit {
     }
 
     console.log(this.myFormDinamic.value);
-    (this.myFormDinamic.controls['favoriteBooks'] as FormArray) = this.fb.array([]);
+    (this.myFormDinamic.controls['favoriteBooks'] as FormArray) = this.fb.array(
+      []
+    );
     this.myFormDinamic.reset();
   }
 }

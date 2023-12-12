@@ -1,16 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-switches-page',
   templateUrl: './switches-page.component.html',
-  styles: [
-  ]
+  styles: [],
 })
-export class SwitchesPageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class SwitchesPageComponent {
+  constructor() {}
 }
