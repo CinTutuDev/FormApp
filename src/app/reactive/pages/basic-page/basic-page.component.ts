@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validator, FormGroup, Validators } from '@angular/forms';
 
+const ctc5090 = {
+  name: 'CTC ',
+  price: 2500,
+  inStorage: 6,
+};
+
 @Component({
   selector: 'app-basic-page',
   templateUrl: './basic-page.component.html',
@@ -15,13 +21,14 @@ export class BasicPageComponent implements OnInit {
   });
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.myForm.reset(ctc5090);
+  }
 
   onSave(): void {
-    if (this.myForm.invalid) {
-      return;
-    }
-
+    if (this.myForm.invalid) return;
     console.log(this.myForm.value);
+
+    this.myForm.reset({ price: 0, inStorage: 0 });
   }
 }
