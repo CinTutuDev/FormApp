@@ -13,11 +13,6 @@ import { SwitchesPageComponent } from './pages/switches-page/switches-page.compo
     DynamicPageComponent,
     SwitchesPageComponent,
   ],
-  imports: [
-    CommonModule,
-    ReactiveRoutingModule,
-    ReactiveRoutingModule,
-    ReactiveFormsModule,
-  ],
+  imports: [CommonModule, ReactiveRoutingModule, ReactiveFormsModule],
 })
 export class ReactiveModule {}
